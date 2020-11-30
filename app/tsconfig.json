@@ -26,6 +26,6 @@
       "no-default-export": true
     },
     "exclude": ["node_modules"],
-    "include": ["**/*.ts", "**/*.tsx", "pages/index.ssx"]
+    "include": ["**/*.ts", "**/*.tsx", "pages/index.tsx"]
   }
   
