@@ -65,7 +65,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Kindle Clippings Parser</title>
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
