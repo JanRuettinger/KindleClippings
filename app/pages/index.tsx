@@ -77,12 +77,8 @@ export default function Home() {
             <input type="file" accept=".txt" onChange={handleFileUpload} />
             Uploaded File: {fileName}
             <div className="mt-4">
-              <h2>File: </h2>
-              {/* {fileContent} */}
-            </div>
-            <div className="mt-4">
               <h2>Parsed File:</h2>
-              {fileParsedContent
+              {fileParsedContent !== null
                 ? [...fileParsedContent.keys()].map((noteTitle) => {
                     return printNoteMap(
                       noteTitle,
@@ -94,7 +90,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-
       <footer />
     </div>
   );
