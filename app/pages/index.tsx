@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 export default function Home() {
   const [fileName, setFileName] = useState<string | null>(null);
-  const [fileContent, setFileContent] = useState<string | null>(null);
+  // const [fileContent, setFileContent] = useState<string | null>(null);
   const [fileParsedContent, setFileParsedContent] = useState<Map<
     any,
     any
@@ -11,7 +11,7 @@ export default function Home() {
 
   const parseFile = (file: string) => {
     const splittedFile = file.split(/\r?\n/g);
-    console.log(splittedFile.length);
+    // console.log(splittedFile.length);
     const Notes = new Map();
     let blockCounter = 0;
     while (blockCounter < Math.floor(splittedFile.length / 5)) {
@@ -41,19 +41,18 @@ export default function Home() {
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onload = () => {
-      setFileContent(reader.result as string);
+      // setFileContent(reader.result as string);
       setFileParsedContent(parseFile(reader.result as string));
     };
 
     reader.onerror = () => {
-      console.log(reader.error);
+      // console.log(reader.error);
     };
 
     setFileName(file.name);
   };
 
   const printNoteMap = (key: string, value: string) => {
-    console.log('in printnoteMap');
     return (
       <div className="mt-4">
         <h3 className="text-center text-xl">{key}</h3>
