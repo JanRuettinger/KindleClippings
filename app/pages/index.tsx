@@ -3,7 +3,8 @@ import Head from 'next/head';
 
 export default function Home() {
   const [fileName, setFileName] = useState<string | null>(null);
-  // const [fileContent, setFileContent] = useState<string | null>(null);
+  // const [copySuccess, setCopySuccess] = useState('');
+  // const textAreaRef = useRef(null);
   const [fileParsedContent, setFileParsedContent] = useState<Map<
     any,
     any
@@ -52,13 +53,43 @@ export default function Home() {
     setFileName(file.name);
   };
 
+  // const copyToClipboard = (e) => {
+  //   if(textAreaRef){
+
+  //   }
+  //   textAreaRef.current.select();
+  //   document.execCommand('copy');
+  //   // This is just personal preference.
+  //   // I prefer to not show the the whole text area selected.
+  //   e.target.focus();
+  //   setCopySuccess('Copied!');
+  // };
+
   const printNoteMap = (key: string, value: string) => {
     return (
       <div className="mt-4 bg-white overflow-hidden sm:rounded-lg sm:shadow">
         <div className="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">{key}</h3>
+          <h3 className="text-lg leading-6  text-gray-900 font-sans font-semibold">
+            {key}
+          </h3>
         </div>
-        <div className="whitespace-pre-line px-4 py-5 sm:px-6">{value}</div>
+        {/* {document.queryCommandSupported('copy') && (
+          <div>
+            <button
+              className="rounded-md border-2 p-2"
+              type="button"
+              onClick={copyToClipboard}
+            >
+              Copy
+            </button>
+          </div>
+        )} */}
+        <div className="whitespace-pre-line px-4 py-5 sm:px-6 font-light">
+          {/* <form>
+            <textarea ref={textAreaRef} value={value} />
+          </form> */}
+          {value}
+        </div>
       </div>
     );
   };
@@ -75,6 +106,19 @@ export default function Home() {
           <h1 className="mt-8 text-2xl text-center font-test font-bold">
             Welcome friends of LibGen!
           </h1>
+          <div className="mt-2">
+            This is a simple tool I built for my roommate{' '}
+            <a
+              href="https://www.jandamm.me"
+              className="text-blue-700 underline font-bold"
+            >
+              Jan Damm
+            </a>
+            . It parses your Kindle{' '}
+            <span className="bg-red-200">Clippings.txt</span> file and outputs
+            all your notes in a clean format so that you can copy your notes
+            more easily to other tools like Notion.
+          </div>
           <div className="mt-8">
             <input type="file" accept=".txt" onChange={handleFileUpload} />
             Uploaded File: {fileName}
