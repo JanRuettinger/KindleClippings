@@ -1,4 +1,12 @@
 /* ./styles/global.css */
 @tailwind base;
 @tailwind components;
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap');
+
 @tailwind utilities;
+
+body {
+  @apply bg-blue-200 p-12;
+}

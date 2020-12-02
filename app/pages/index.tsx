@@ -54,9 +54,11 @@ export default function Home() {
 
   const printNoteMap = (key: string, value: string) => {
     return (
-      <div className="mt-4">
-        <h3 className="text-center text-xl">{key}</h3>
-        <div className="whitespace-pre-line">{value}</div>
+      <div className="mt-4 bg-white overflow-hidden sm:rounded-lg sm:shadow">
+        <div className="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+          <h3 className="text-lg leading-6 font-medium text-gray-900">{key}</h3>
+        </div>
+        <div className="whitespace-pre-line px-4 py-5 sm:px-6">{value}</div>
       </div>
     );
   };
@@ -70,7 +72,7 @@ export default function Home() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <h1 className="mt-8 text-2xl text-center">
+          <h1 className="mt-8 text-2xl text-center font-test font-bold">
             Welcome friends of LibGen!
           </h1>
           <div className="mt-8">
